@@ -1,4 +1,4 @@
-package chapter1_array;
+package chapter2_array;
 
 public class SelectSortApp {
 	public static void main(String[] args) {

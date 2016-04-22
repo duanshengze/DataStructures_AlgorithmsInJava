@@ -1,4 +1,4 @@
-package chapter1_array;
+package chapter2_array;
 
 public class OrderedApp {
 
@@ -39,11 +39,11 @@ class OrderArray{
 	public int size(){
 		return nElems;
 	}
-	//二分法查找
+	//二分法查�?
 	
 	/**
 	 * @param searchKey
-	 * @return 查得数组的索引 当返回-1 时则表示找不到
+	 * @return 查得数组的索�? 当返�?-1 时则表示找不�?
 	 */
 	public int find(long searchKey){
 		

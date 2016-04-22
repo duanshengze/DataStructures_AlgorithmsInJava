@@ -1,4 +1,4 @@
-package chapter1_array;
+package chapter2_array;
 
 import com.sun.org.apache.regexp.internal.recompile;
 import com.sun.swing.internal.plaf.basic.resources.basic;
