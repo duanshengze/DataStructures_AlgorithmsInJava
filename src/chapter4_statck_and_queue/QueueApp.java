@@ -73,8 +73,7 @@ public class QueueApp {
 
 		}
 			System.out.println();		
-		
-		
+	
 	}
 
 }
