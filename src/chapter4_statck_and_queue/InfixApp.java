@@ -164,7 +164,7 @@ public class InfixApp {
 				}
 				InToPost itp=new InToPost(input);
 				output=	itp.doTrans();	
-				System.out.println("Postfix is :  "+output);
+				System.out.println("Postfix is : "+output);
 				
 			}
 		}
