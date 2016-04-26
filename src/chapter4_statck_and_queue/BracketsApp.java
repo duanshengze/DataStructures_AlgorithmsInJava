@@ -1,4 +1,4 @@
-package chapter4_stack_queue;
+package chapter4_statck_and_queue;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class BracketsApp {
 	public static void main(String[] args) throws IOException {
 		String input;
 		while(true){
-			System.out.println("输入包含匹配符的字符串：");
+			System.out.println("杈撳叆鍖呭惈鍖归厤绗︾殑瀛楃涓诧細");
 //			System.out.flush();
 			input=getString();
 			if(input.equals("")) break;
@@ -37,11 +37,11 @@ public class BracketsApp {
 	
 
 }
-class StackX{
+class StackC2{
 	private char[]stackArray;
 	private int maxSize;
 	private int top;
-	 public StackX(int max){
+	 public StackC2(int max){
 		 stackArray=new char[max];
 		 maxSize=max;
 		 top=-1;
@@ -72,7 +72,7 @@ class BracketChecker{
 	  
 	public void check(){
 		int stackSize=input.length();
-		StackX stack=new StackX(stackSize);
+		StackC2 stack=new StackC2(stackSize);
 		for(int i=0;i<stackSize;i++){
 			char ch=input.charAt(i);
 			
@@ -95,9 +95,9 @@ class BracketChecker{
 						
 						System.out.println("Error: "+ch+" at "+i);
 					}
-					//防止 {[( )]}}这样的发生
+					//闃叉 {[( )]}}杩欐牱鐨勫彂鐢�
 				}else {
-						System.out.println("右边括号还有预留Error: "+ch+" at "+i);
+						System.out.println("鍙宠竟鎷彿杩樻湁棰勭暀Error: "+ch+" at "+i);
 				}
 				
 				break;
@@ -105,9 +105,9 @@ class BracketChecker{
 					
 		}//for end
 		if(!stack.isEmpty()){
-			System.out.println("左边括号还有余留Error: ");
+			System.out.println("宸﹁竟鎷彿杩樻湁浣欑暀Error: ");
 		}else {
-			System.out.println("匹配成功！");
+			System.out.println("鍖归厤鎴愬姛锛�");
 		}
 	
 	}
