@@ -81,15 +81,16 @@ class DoubleLinkedList{
 		while(current!=null){
 			if(current.dData==key){
 				if(current==last){
-					current.prev=last;
-					last.next=current;
-					last=current;
+					newLink.prev=last;
+					last.next=newLink;
+					last=newLink;
 					return true;
 				}else{
 					newLink.prev=current;
 					newLink.next=current.next;
-					current.next=newLink;
 					current.next.prev=newLink;
+					current.next=newLink;
+					
 					return true;
 				}
 		
@@ -106,25 +107,28 @@ class DoubleLinkedList{
 			if(current==null){
 				return null;
 			}
+			
 		}
 		if(current==first){
-			if(current.next==null){
-				last=null;
-				first=last;
-				
-			}else {
-				current.next.prev=null;
-				first=first.next;
-				
-			}
+//			if(current.next==null){
+//				last=null;
+//				first=last;
+//				
+//			}else {
+//				first.next.prev=null;
+//				first=first.next;
+//				
+//			}
+			deleteFirst();
 			return current;
 		}else if(current==last){
-			if(current.prev==null){
-				first=null;
-			}else {
-				current.prev.next=null;
-				last=current.prev;
-			}
+//			if(current.prev==null){
+//				first=null;
+//			}else {
+//				current.prev.next=null;
+//				last=current.prev;
+//			}
+			deleteLast();
 			return current;
 			
 		}else {
@@ -167,11 +171,9 @@ public class DoubleLinkedApp {
 		doubleLinkedList.insertFirst(66);
 		doubleLinkedList.insertFirst(11);
 		doubleLinkedList.insertFirst(45);
-		System.out.println(doubleLinkedList.insertAfter(45, 1));
-		doubleLinkedList.displayBackward();
-		
+		System.out.println(doubleLinkedList.insertAfter(66, 2));
 		doubleLinkedList.displayForward();
-		doubleLinkedList.deleteKey(45).displayLink();
-		doubleLinkedList.displayBackward();
+		doubleLinkedList.deleteKey(2);
+		doubleLinkedList.displayForward();
 	}
 }
