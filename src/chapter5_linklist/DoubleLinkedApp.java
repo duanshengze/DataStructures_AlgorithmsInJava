@@ -174,6 +174,8 @@ public class DoubleLinkedApp {
 		System.out.println(doubleLinkedList.insertAfter(66, 2));
 		doubleLinkedList.displayForward();
 		doubleLinkedList.deleteKey(2);
+		doubleLinkedList.deleteFirst();
+		doubleLinkedList.deleteLast();
 		doubleLinkedList.displayForward();
 	}
 }
