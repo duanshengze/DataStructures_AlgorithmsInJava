@@ -47,23 +47,64 @@ class Link2List{
 		}
 		return current;
 	}
-	//ɾ���������뱣֤�ǿ�
+//	//自己写的方法
+//	public Link2 delete(int iD){
+//		Link2 temp=first;
+//		Link2 current=first;
+//		if(first.iData==iD) {
+//			first=first.next;
+//			return temp;
+//		}
+//		while(current!=null){
+//			if(current.next!=null&&current.next.iData==iD){
+//				temp=current.next;
+//				current.next=current.next.next;
+//				return temp;
+//			}
+//			current=current.next;
+//		}
+//		return null;
+//	}
+	// 调用删除的前提是链表非空
 	public Link2 delete(int iD){
-		Link2 temp=first;
-		Link2 current=first;
-		if(first.iData==iD) {
-			first=first.next;
-			return temp;
-		}
-		while(current!=null){
-			if(current.next!=null&&current.next.iData==iD){
-				temp=current.next;
-				current.next=current.next.next;
-				return temp;
+		Link2 previous=first;
+		Link2 content=first;
+		
+		while(content.iData!=iD){
+			if(content.next==null){
+					return null;
+				}else {
+					previous=content;
+					content=content.next;
+				}
+	 }//end while 
+			if(content==first){
+				first=first.next;
+			}else {
+				previous.next=content.next;
 			}
-			current=current.next;
+			return content;
+	}
+	
+	
+	public void insertAfter(int key,Link2 newLink){
+		
+		if(first==null) return ;//如果为空则返回
+
+		Link2 previous=first;
+		Link2 current=first;
+		while(current.iData!=key){
+			if(current.next==null){
+				return;
+			}else {
+				current=current.next;
+			}
 		}
-		return null;
+		//find it
+		Link2 after=current.next;
+		current.next=newLink;
+		newLink.next=after;
+		
 	}
 	
 	public void displayLink2List(){
@@ -85,10 +126,11 @@ public class LinkList2App {
 		link2List.insertFirst(12, 12.9);
 		link2List.insertFirst(13, 13.9);
 		link2List.insertFirst(14, 14.9);
+		link2List.insertFirst(14, 14.9);
 		link2List.displayLink2List();
 		link2List.delete(13).displayLink2();;
 		link2List.displayLink2List();	
-		
-
+		link2List.insertAfter(1, new Link2(44, 44.3));
+		link2List.displayLink2List();
 	}
 }
